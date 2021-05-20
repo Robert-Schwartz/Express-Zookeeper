@@ -47,6 +47,15 @@ function filterByQuery(query, animalsArray) {
     // return the filtered results:
     return filteredResults;
 }
+// Find ID takes in the id and array of animals
+//================================================
+function findById(id, animalsArray) {
+    const result = animalsArray.filter(animal => animal.id === id)[0];
+    return result;
+    //returns a single animal object
+}
+
+
 //add the route and send method
 //=================================================
 app.get('/api/animals', (req, res) => {
@@ -55,6 +64,15 @@ app.get('/api/animals', (req, res) => {
         results = filterByQuery(req.query, results);
     }
     res.json(results);
+});
+
+app.get('/api/animals/:id', (req, res) => {
+    const result = findById(req.params.id, animals);
+    if (result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
 });
 
 /*  get() method requires two arguments, a string that describes the route the client will have to fetch from, and a callback function that will execute every time that route is accessed with a GET request.  We are using the send() method from the res parameter (short for response) to send the string Hello! to our client. */
