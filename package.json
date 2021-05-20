@@ -1,0 +1,25 @@
+{
+  "name": "Express-Zookeeper",
+  "version": "1.0.0",
+  "description": "Project to create a web server for a front-end application, called Zoo Keepr to store the data on an Express Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robert-Schwartz/Express-Zookeeper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robert-Schwartz/Express-Zookeeper/issues"
+  },
+  "homepage": "https://github.com/Robert-Schwartz/Express-Zookeeper#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
