@@ -1,5 +1,7 @@
 //require express after downloading express from npm 
 const express = require('express');
+//set environment variable port
+const PORT = process.env.PORT || 3001;
 //setting the server (instantiate the server)
 const app = express();
 //create a route that the front end can request data from
@@ -59,6 +61,6 @@ app.get('/api/animals', (req, res) => {
 
 
 //make the express server 'app' listen for requests
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
