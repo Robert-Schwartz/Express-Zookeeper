@@ -15,6 +15,8 @@ const path = require('path');
 app.use(express.urlencoded({ extended: true }));
 // parse incoming stats JSON data
 app.use(express.json());
+// instructs server to maker public files available
+app.use(express.static('public'));
 
 //filter functionality inside the .get() callback
 //===================================================
@@ -117,6 +119,11 @@ app.get('/api/animals/:id', (req, res) => {
     }
 });
 
+// route / is used to create a homepage for a server
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
 //post method
 app.post('/api/animals', (req, res) => {
     // set id based on what the next index of the array will be
@@ -130,6 +137,7 @@ app.post('/api/animals', (req, res) => {
         res.json(animal);
     }
 });
+
 
 //make the express server 'app' listen for requests
 //============================================================
