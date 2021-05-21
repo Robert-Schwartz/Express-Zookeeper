@@ -56,8 +56,15 @@ function findById(id, animalsArray) {
 }
 
 
-//add the route and send method
+// Routes
 //=================================================
+/*  
+
+get() method requires two arguments, a string that describes the route the client will have to fetch from, and a callback function that will execute every time that route is accessed with a GET request.  We are using the send() method from the res parameter (short for response) to send the string Hello! to our client. 
+
+POST requests differ from GET requests in that they represent the action of a client requesting the server to accept data rather than vice versa.
+
+*/
 app.get('/api/animals', (req, res) => {
     let results = animals;
     if (req.query) {
@@ -75,10 +82,15 @@ app.get('/api/animals/:id', (req, res) => {
     }
 });
 
-/*  get() method requires two arguments, a string that describes the route the client will have to fetch from, and a callback function that will execute every time that route is accessed with a GET request.  We are using the send() method from the res parameter (short for response) to send the string Hello! to our client. */
-
+//post method
+app.post('/api/animals', (req, res) => {
+    // req.body is where our incoming content will be
+    console.log(req.body);
+    res.json(req.body);
+ });
 
 //make the express server 'app' listen for requests
+//============================================================
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
