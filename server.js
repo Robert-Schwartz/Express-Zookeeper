@@ -7,6 +7,13 @@ const app = express();
 //create a route that the front end can request data from
 const { animals } = require('./data/animals');
 
+// Middleware
+// =================================================
+    //parse incoming string or array data
+app.use(express.urlencoded({ extended:  true}));
+    // parse incoming stats JSON data
+app.use(express.json());
+
 //filter functionality inside the .get() callback
 //===================================================
 function filterByQuery(query, animalsArray) {
