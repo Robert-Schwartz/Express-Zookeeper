@@ -3,6 +3,7 @@ Project to create a web server for a front-end application, called Zoo Keeper to
 
 [GitHub Repo](https://github.com/Robert-Schwartz/Express-Zookeeper)  
 
+
 This site is published at: https://robert-schwartz.github.io/Express-Zookeeper/
 
 
@@ -31,7 +32,7 @@ requires download of node.js, npm, and Express
     >  - enter View Animals or View Zookers to view stored information 
     >  - Filter your search by diet or personality traits 
 
-
+![preview](preview.png)
 ## Contributions
 Robert Schwartz, UofA Bootcamp lesson project 
 
